@@ -5,7 +5,8 @@ on:
   pull_request:
     branches: [main]
 jobs:
-  build:
+  check-repo-structure:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Hello Test"
+      - run: echo "Checking repo structure"
+      - run: python3 scripts/CheckRepoStructure.py
