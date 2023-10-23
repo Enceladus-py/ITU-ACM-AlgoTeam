@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          persist-credentials: 'false'
+          persist-credentials: false
       - run: echo "Updating txt files"
       - run: python3 scripts/UpdateTxtFiles.py
       - run: git add .
