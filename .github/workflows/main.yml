@@ -8,6 +8,5 @@ jobs:
   check-repo-structure:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - run: echo "Checking repo structure with pull request"
+      - run: echo "Checking repo structure fail"
       - run: python3 scripts/CheckRepoStructure.py
