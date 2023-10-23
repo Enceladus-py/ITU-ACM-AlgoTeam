@@ -1,12 +1,15 @@
 name: CI
-on:
-  push:
-    branches: [main]
-  pull_request:
-    types: [opened, synchronize, reopened]
+on: pull_request
 jobs:
   check-repo-structure:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "Checking repo structure fail"
+      - uses: actions/checkout@v2
+      - run: echo "Checking repo structure"
       - run: python3 scripts/CheckRepoStructure.py
+  update-txt-file:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo "Updating txt files"
+      - run: python3 scripts/UpdateTxtFiles.py
