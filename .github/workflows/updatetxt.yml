@@ -1,0 +1,18 @@
+name: TXT
+on:
+  pull_request:
+    branches: [main]
+jobs:
+  update-txt-file:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - run: echo "Updating txt files"
+      - run: python3 scripts/UpdateTxtFiles.py
+      - run: git add .
+      - run: git commit -m "auto update txt files"
+      - run: git push

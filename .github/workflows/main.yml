@@ -1,9 +1,7 @@
-name: CI
-on:
-  push:
-    branches: [main]
+name: PR
+on: 
   pull_request:
-    branches: [main]
+    branches: "main"
 jobs:
   check-repo-structure:
     runs-on: ubuntu-latest
