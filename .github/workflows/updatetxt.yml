@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
+          token: ${{ secrets.GITHUB_TOKEN }}
       - run: echo "Updating txt files"
       - run: python3 scripts/UpdateTxtFiles.py
       - run: git add .
