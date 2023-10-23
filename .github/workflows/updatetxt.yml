@@ -9,11 +9,10 @@ jobs:
       contents: write
     steps:
       - uses: actions/checkout@v4
-        with:
-          persist-credentials: false
-          token: ${{ secrets.GITHUB_TOKEN }}
       - run: echo "Updating txt files"
       - run: python3 scripts/UpdateTxtFiles.py
       - run: git add .
+      - run: git config --global user.email "ituacm@test.com"
+      - run: git config --global user.name "ITU ACM"
       - run: git commit -m "Auto update txt files"
       - run: git push
